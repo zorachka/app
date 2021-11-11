@@ -1,0 +1,14 @@
+{
+    "name": "zorachka/app",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Siarhei Bautrukevich",
+            "email": "hello@bautrukevich.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    }
+}
