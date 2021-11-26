@@ -26,10 +26,9 @@
     "require-dev": {
         "pestphp/pest": "^1.21"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../framework"
-        }
-    ]
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
