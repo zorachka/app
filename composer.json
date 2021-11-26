@@ -25,5 +25,10 @@
     },
     "require-dev": {
         "pestphp/pest": "^1.21"
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
