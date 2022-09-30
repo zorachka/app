@@ -14,7 +14,7 @@ use Zorachka\Framework\Container\ServiceProvider;
 use Zorachka\Framework\ErrorHandler\ErrorHandlerConfig;
 use Zorachka\Framework\Logger\LoggerConfig;
 
-final class ConfigServiceProvider implements ServiceProvider
+final class CommonConfigServiceProvider implements ServiceProvider
 {
     /**
      * @inheritDoc
@@ -37,7 +37,7 @@ final class ConfigServiceProvider implements ServiceProvider
             DirectoriesConfig::class => static function(DirectoriesConfig $config) {
                 return $config
                     ->withDirectory(DirectoryAlias::ROOT, \ROOT)
-                    ->withDirectory(DirectoryAlias::PUBLIC, \PUBLIC)
+                    ->withDirectory('@public', \PUBLIC)
                     ->withDirectory('@migrations', \ROOT . '/migrations');
             },
             LoggerConfig::class => static function (LoggerConfig $config, ContainerInterface $container) {
