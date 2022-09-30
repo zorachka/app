@@ -6,12 +6,10 @@ namespace Project\Common\Infrastructure\Providers;
 
 use Zorachka\Framework\Console\ConsoleServiceProvider;
 use Zorachka\Framework\Container\ServiceProvider;
-use Zorachka\Framework\Cors\CorsServiceProvider;
 use Zorachka\Framework\Directories\DirectoriesServiceProvider;
 use Zorachka\Framework\Environment\EnvironmentServiceProvider;
-use Zorachka\Framework\Http\HttpApplicationServiceProvider;
-use Zorachka\Framework\Http\HttpMiddlewareServiceProvider;
-use Zorachka\Framework\Http\HttpServiceProvider;
+use Zorachka\Framework\ErrorHandler\ErrorHandlerServiceProvider;
+use Zorachka\Framework\Http\Application\HttpApplicationServiceProvider;
 use Zorachka\Framework\Logger\LoggerServiceProvider;
 
 final class ProvidersAggregator
@@ -25,16 +23,18 @@ final class ProvidersAggregator
         return [
             // Framework
             EnvironmentServiceProvider::class,
+            ErrorHandlerServiceProvider::class,
             DirectoriesServiceProvider::class,
-            ConsoleServiceProvider::class,
-            HttpServiceProvider::class,
-            HttpApplicationServiceProvider::class,
-            HttpMiddlewareServiceProvider::class,
             LoggerServiceProvider::class,
-            CorsServiceProvider::class,
+
+            // Console Application
+            ConsoleServiceProvider::class,
+
+            // Http Application
+            HttpApplicationServiceProvider::class,
 
             // Application
-            CommonServiceProvider::class,
+            CommonConfigServiceProvider::class,
         ];
     }
 }
