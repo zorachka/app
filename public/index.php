@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Zorachka\Framework\Http\Application\Application;
+use Zorachka\Http\Application;
 
 /**
  * Self-called anonymous function that creates its own scope and keeps the global namespace clean.

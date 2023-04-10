@@ -3,21 +3,18 @@
 declare(strict_types=1);
 
 use Psr\Container\ContainerInterface;
-use Zorachka\Framework\Container\ContainerFactory;
+use Zorachka\Container\ContainerFactory;
 use Zorachka\Framework\ErrorHandler\ErrorHandler;
-use Project\Common\Infrastructure\Providers\ProvidersAggregator;
+use Project\Core\Infrastructure\Providers\ProvidersAggregator;
 
 mb_internal_encoding('UTF-8');
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 'stderr');
 
 $rootDirectory = __DIR__;
-$publicDirectory = $rootDirectory . '/public';
+define('ROOT', $rootDirectory);
 
 require_once $rootDirectory . '/vendor/autoload.php';
-
-define('ROOT', $rootDirectory);
-define('PUBLIC', $publicDirectory);
 
 return static function(): ContainerInterface {
     $container = (new ContainerFactory())->build(

@@ -4,13 +4,19 @@ declare(strict_types=1);
 
 namespace Project\Common\Infrastructure\Providers;
 
-use Zorachka\Framework\Console\ConsoleServiceProvider;
-use Zorachka\Framework\Container\ServiceProvider;
-use Zorachka\Framework\Directories\DirectoriesServiceProvider;
-use Zorachka\Framework\Environment\EnvironmentServiceProvider;
-use Zorachka\Framework\ErrorHandler\ErrorHandlerServiceProvider;
-use Zorachka\Framework\Http\Application\HttpApplicationServiceProvider;
-use Zorachka\Framework\Logger\LoggerServiceProvider;
+use Zorachka\Clock\ClockServiceProvider;
+use Zorachka\Console\ConsoleServiceProvider;
+use Zorachka\Container\ServiceProvider;
+use Zorachka\Database\Cycle\DBAL\CycleDBALServiceProvider;
+use Zorachka\Database\Cycle\Migrations\MigrationsServiceProvider;
+use Zorachka\Directories\DirectoriesServiceProvider;
+use Zorachka\Environment\EnvironmentServiceProvider;
+use Zorachka\ErrorHandler\ErrorHandlerServiceProvider;
+use Zorachka\EventDispatcher\EventDispatcherServiceProvider;
+use Zorachka\Http\Providers\HttpApplicationServiceProvider;
+use Zorachka\Http\Router\RouterServiceProvider;
+use Zorachka\Logger\LoggerServiceProvider;
+use Zorachka\Uuid\UuidServiceProvider;
 
 final class ProvidersAggregator
 {
@@ -26,14 +32,20 @@ final class ProvidersAggregator
             ErrorHandlerServiceProvider::class,
             DirectoriesServiceProvider::class,
             LoggerServiceProvider::class,
+            ClockServiceProvider::class,
+            UuidServiceProvider::class,
+            EventDispatcherServiceProvider::class,
+            CycleDBALServiceProvider::class,
+            MigrationsServiceProvider::class,
 
             // Console Application
             ConsoleServiceProvider::class,
 
             // Http Application
+            RouterServiceProvider::class,
             HttpApplicationServiceProvider::class,
 
-            // Application
+            // Application config
             CommonConfigServiceProvider::class,
         ];
     }

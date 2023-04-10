@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Project\Common\Infrastructure\Providers;
 
+use HomeAction;
 use Psr\Container\ContainerInterface;
-use Zorachka\Framework\Clock\ClockConfig;
-use Zorachka\Framework\Console\ConsoleConfig;
-use Zorachka\Framework\Directories\DirectoriesConfig;
-use Zorachka\Framework\Directories\DirectoryAlias;
-use Zorachka\Framework\Environment\Environment;
-use Zorachka\Framework\Container\ServiceProvider;
-use Zorachka\Framework\ErrorHandler\ErrorHandlerConfig;
-use Zorachka\Framework\Logger\LoggerConfig;
+use Zorachka\Clock\ClockConfig;
+use Zorachka\Console\ConsoleConfig;
+use Zorachka\Directories\DirectoriesConfig;
+use Zorachka\Directories\DirectoryAlias;
+use Zorachka\Environment\Environment;
+use Zorachka\Container\ServiceProvider;
+use Zorachka\ErrorHandler\ErrorHandlerConfig;
+use Zorachka\Http\Router\Route;
+use Zorachka\Http\Router\RouterConfig;
+use Zorachka\Logger\LoggerConfig;
 
 final class CommonConfigServiceProvider implements ServiceProvider
 {
@@ -37,8 +40,8 @@ final class CommonConfigServiceProvider implements ServiceProvider
             DirectoriesConfig::class => static function(DirectoriesConfig $config) {
                 return $config
                     ->withDirectory(DirectoryAlias::ROOT, \ROOT)
-                    ->withDirectory('@public', \PUBLIC)
-                    ->withDirectory('@migrations', \ROOT . '/migrations');
+                    ->withDirectory('@public', '@root/public')
+                    ->withDirectory('@migrations', '@root/migrations');
             },
             LoggerConfig::class => static function (LoggerConfig $config, ContainerInterface $container) {
                 /** @var Environment $environment */
@@ -58,8 +61,13 @@ final class CommonConfigServiceProvider implements ServiceProvider
                         $environment->get('CONSOLE_APP_NAME')
                     );
             },
+            RouterConfig::class => static function (RouterConfig $config) {
+                return $config->addRoute(
+                    Route::get('/', HomeAction::class)
+                );
+            },
             ClockConfig::class => static fn(ClockConfig $config) =>
-                $config->withTimezone('Europe/Moscow')
+                $config->withTimezone('Europe/Minsk')
         ];
     }
 }
