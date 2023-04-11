@@ -16,6 +16,8 @@
         "zorachka/container": "^3.1",
         "zorachka/database": "dev-main",
         "zorachka/directories": "dev-main",
+        "zorachka/environment": "dev-main",
+        "zorachka/error-handler": "dev-main",
         "zorachka/event-dispatcher": "^3.0",
         "zorachka/logger": "dev-main",
         "zorachka/uuid": "dev-main"

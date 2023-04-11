@@ -7,7 +7,7 @@ namespace Project\Common\Infrastructure\Providers;
 use Zorachka\Clock\ClockServiceProvider;
 use Zorachka\Console\ConsoleServiceProvider;
 use Zorachka\Container\ServiceProvider;
-use Zorachka\Database\Cycle\DBAL\CycleDBALServiceProvider;
+use Zorachka\Database\Cycle\DBAL\DBALServiceProvider;
 use Zorachka\Database\Cycle\Migrations\MigrationsServiceProvider;
 use Zorachka\Directories\DirectoriesServiceProvider;
 use Zorachka\Environment\EnvironmentServiceProvider;
@@ -35,7 +35,7 @@ final class ProvidersAggregator
             ClockServiceProvider::class,
             UuidServiceProvider::class,
             EventDispatcherServiceProvider::class,
-            CycleDBALServiceProvider::class,
+            DBALServiceProvider::class,
             MigrationsServiceProvider::class,
 
             // Console Application
