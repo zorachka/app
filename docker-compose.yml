@@ -4,7 +4,7 @@ services:
         build:
             context: docker/nginx
         ports:
-            - "80:80"
+            - "8080:80"
         volumes:
             - ./:/app
         depends_on:

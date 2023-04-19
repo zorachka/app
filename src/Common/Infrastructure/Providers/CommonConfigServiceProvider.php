@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Project\Common\Infrastructure\Providers;
 
-use HomeAction;
 use Psr\Container\ContainerInterface;
 use Zorachka\Clock\ClockConfig;
 use Zorachka\Console\ConsoleConfig;
@@ -16,6 +15,7 @@ use Zorachka\ErrorHandler\ErrorHandlerConfig;
 use Zorachka\Http\Router\Route;
 use Zorachka\Http\Router\RouterConfig;
 use Zorachka\Logger\LoggerConfig;
+use Project\Common\UI\Http\Action\HomeAction;
 
 final class CommonConfigServiceProvider implements ServiceProvider
 {
@@ -62,7 +62,7 @@ final class CommonConfigServiceProvider implements ServiceProvider
                     );
             },
             RouterConfig::class => static function (RouterConfig $config) {
-                return $config->addRoute(
+                return $config->withRoute(
                     Route::get('/', HomeAction::class)
                 );
             },

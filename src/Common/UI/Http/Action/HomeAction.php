@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Project\Common\UI\Http\Action;
+
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -18,6 +20,6 @@ final class HomeAction implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return $this->responseFactory::html('Hello, world!');
+        return $this->responseFactory::html('<h1>Hello, world!</h1>');
     }
 }

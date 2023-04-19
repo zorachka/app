@@ -2,7 +2,7 @@
     <a href="https://github.com/zorachka" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/86768962" height="240px">
     </a>
-    <h1 align="center">Zorachka PHP Package Starter</h1>
+    <h1 align="center">Zorachka App Starter</h1>
     <br>
 </p>
 
@@ -15,12 +15,10 @@
 You can install the package via composer:
 
 ```bash
-composer require zorachka/php-package-starter
+composer create-project --prefer-dist --stability=dev zorachka/app <your project>
 ```
 
 ## Usage
-
-To create a container you need to pass array of `ServiceProvider` objects interface:
 
 ```php
 <?php

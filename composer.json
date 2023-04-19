@@ -2,10 +2,16 @@
     "name": "zorachka/app",
     "type": "project",
     "license": "MIT",
+    "keywords": [
+        "zorachka",
+        "http",
+        "application"
+    ],
     "authors": [
         {
             "name": "Siarhei Bautrukevich",
-            "email": "hello@bautrukevich.com"
+            "email": "hello@bautrukevich.com",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -17,19 +23,19 @@
         "zorachka/database": "dev-main",
         "zorachka/directories": "dev-main",
         "zorachka/environment": "dev-main",
-        "zorachka/error-handler": "dev-main",
         "zorachka/event-dispatcher": "^3.0",
+        "zorachka/http": "dev-main",
         "zorachka/logger": "dev-main",
         "zorachka/uuid": "dev-main"
     },
     "autoload": {
         "psr-4": {
-            "Project\\": "src/"
+            "Project\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Project\\Tests\\": "tests"
+            "Project\\Tests\\": "./tests"
         }
     },
     "require-dev": {

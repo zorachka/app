@@ -13,8 +13,7 @@ use Zorachka\Directories\DirectoriesServiceProvider;
 use Zorachka\Environment\EnvironmentServiceProvider;
 use Zorachka\ErrorHandler\ErrorHandlerServiceProvider;
 use Zorachka\EventDispatcher\EventDispatcherServiceProvider;
-use Zorachka\Http\Providers\HttpApplicationServiceProvider;
-use Zorachka\Http\Router\RouterServiceProvider;
+use Zorachka\Http\Providers\HttpServiceProvider;
 use Zorachka\Logger\LoggerServiceProvider;
 use Zorachka\Uuid\UuidServiceProvider;
 
@@ -42,8 +41,7 @@ final class ProvidersAggregator
             ConsoleServiceProvider::class,
 
             // Http Application
-            RouterServiceProvider::class,
-            HttpApplicationServiceProvider::class,
+            HttpServiceProvider::class,
 
             // Application config
             CommonConfigServiceProvider::class,
