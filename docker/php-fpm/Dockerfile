@@ -1,9 +1,5 @@
-FROM php:8.1-fpm-alpine
+ARG PHP_EXTENSIONS="apcu pgsql pdo_pgsql"
 
-RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
-
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-
-RUN install-php-extensions apcu
+FROM thecodingmachine/php:8.1-v4-slim-fpm
 
 WORKDIR /app
