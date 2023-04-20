@@ -520,6 +520,77 @@
             "time": "2020-11-24T22:02:12+00:00"
         },
         {
+            "name": "filp/whoops",
+            "version": "2.15.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "aac9304c5ed61bf7b1b7a6064bf9806ab842ce73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/aac9304c5ed61bf7b1b7a6064bf9806ab842ce73",
+                "reference": "aac9304c5ed61bf7b1b7a6064bf9806ab842ce73",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0 || ^8.0",
+                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9 || ^1.0",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.3",
+                "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
+                "whoops/soap": "Formats errors as SOAP responses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whoops\\": "src/Whoops/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://filp.github.io/whoops/",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "throwable",
+                "whoops"
+            ],
+            "support": {
+                "issues": "https://github.com/filp/whoops/issues",
+                "source": "https://github.com/filp/whoops/tree/2.15.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/denis-sokolov",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-04-12T12:00:00+00:00"
+        },
+        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.1",
             "source": {
@@ -4197,12 +4268,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zorachka/directories.git",
-                "reference": "58c7c060a606d1f59d40f3300737fbb74dc40e77"
+                "reference": "1c3b4a9bde432372375c197770a5e3c6ed52b167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zorachka/directories/zipball/58c7c060a606d1f59d40f3300737fbb74dc40e77",
-                "reference": "58c7c060a606d1f59d40f3300737fbb74dc40e77",
+                "url": "https://api.github.com/repos/zorachka/directories/zipball/1c3b4a9bde432372375c197770a5e3c6ed52b167",
+                "reference": "1c3b4a9bde432372375c197770a5e3c6ed52b167",
                 "shasum": ""
             },
             "require": {
@@ -4255,7 +4326,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-04-06T15:15:39+00:00"
+            "time": "2023-04-19T22:52:53+00:00"
         },
         {
             "name": "zorachka/environment",
@@ -4263,12 +4334,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zorachka/environment.git",
-                "reference": "119f5c1e736caff5570779fd8f18a130efa4f5e6"
+                "reference": "403031a918fdeccd6ad1538bbb902326dea86f59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zorachka/environment/zipball/119f5c1e736caff5570779fd8f18a130efa4f5e6",
-                "reference": "119f5c1e736caff5570779fd8f18a130efa4f5e6",
+                "url": "https://api.github.com/repos/zorachka/environment/zipball/403031a918fdeccd6ad1538bbb902326dea86f59",
+                "reference": "403031a918fdeccd6ad1538bbb902326dea86f59",
                 "shasum": ""
             },
             "require": {
@@ -4323,7 +4394,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-04-11T07:59:26+00:00"
+            "time": "2023-04-20T05:43:03+00:00"
         },
         {
             "name": "zorachka/event-dispatcher",
@@ -4401,15 +4472,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zorachka/http.git",
-                "reference": "9e28d0f0f42394d4b5ac08a5ef7731db3ca884bb"
+                "reference": "f356e39c48e90a831da1957fa7023d2046601a78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zorachka/http/zipball/9e28d0f0f42394d4b5ac08a5ef7731db3ca884bb",
-                "reference": "9e28d0f0f42394d4b5ac08a5ef7731db3ca884bb",
+                "url": "https://api.github.com/repos/zorachka/http/zipball/f356e39c48e90a831da1957fa7023d2046601a78",
+                "reference": "f356e39c48e90a831da1957fa7023d2046601a78",
                 "shasum": ""
             },
             "require": {
+                "filp/whoops": "^2.15",
                 "laminas/laminas-diactoros": "^2.7",
                 "laminas/laminas-stdlib": "^3.6",
                 "laminas/laminas-stratigility": "^3.9",
@@ -4421,7 +4493,6 @@
             },
             "require-dev": {
                 "dg/bypass-finals": "^1.4",
-                "filp/whoops": "^2.15",
                 "friendsofphp/php-cs-fixer": "^3.16",
                 "phpstan/extension-installer": "^1.2",
                 "phpstan/phpstan": "^1.10",
@@ -4467,7 +4538,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-04-19T12:22:55+00:00"
+            "time": "2023-04-19T12:49:24+00:00"
         },
         {
             "name": "zorachka/logger",
@@ -5341,16 +5412,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.13",
+            "version": "1.10.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "f07bf8c6980b81bf9e49d44bd0caf2e737614a70"
+                "reference": "d232901b09e67538e5c86a724be841bea5768a7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f07bf8c6980b81bf9e49d44bd0caf2e737614a70",
-                "reference": "f07bf8c6980b81bf9e49d44bd0caf2e737614a70",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d232901b09e67538e5c86a724be841bea5768a7c",
+                "reference": "d232901b09e67538e5c86a724be841bea5768a7c",
                 "shasum": ""
             },
             "require": {
@@ -5399,7 +5470,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-12T19:29:52+00:00"
+            "time": "2023-04-19T13:47:27+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",

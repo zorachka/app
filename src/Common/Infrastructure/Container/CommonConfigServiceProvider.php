@@ -2,44 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Project\Common\Infrastructure\Providers;
+namespace Project\Common\Infrastructure\Container;
 
 use Psr\Container\ContainerInterface;
 use Zorachka\Clock\ClockConfig;
 use Zorachka\Console\ConsoleConfig;
+use Zorachka\Container\ServiceProvider;
 use Zorachka\Directories\DirectoriesConfig;
 use Zorachka\Directories\DirectoryAlias;
 use Zorachka\Environment\Environment;
-use Zorachka\Container\ServiceProvider;
-use Zorachka\ErrorHandler\ErrorHandlerConfig;
-use Zorachka\Http\Router\Route;
-use Zorachka\Http\Router\RouterConfig;
 use Zorachka\Logger\LoggerConfig;
-use Project\Common\UI\Http\Action\HomeAction;
+
+use const ROOT;
 
 final class CommonConfigServiceProvider implements ServiceProvider
 {
-    /**
-     * @inheritDoc
-     */
     public static function getDefinitions(): array
     {
         return [];
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function getExtensions(): array
     {
         return [
-            ErrorHandlerConfig::class => static function(ErrorHandlerConfig $config) {
+            DirectoriesConfig::class => static function (DirectoriesConfig $config) {
                 return $config
-                    ->withCatchExceptions(true);
-            },
-            DirectoriesConfig::class => static function(DirectoriesConfig $config) {
-                return $config
-                    ->withDirectory(DirectoryAlias::ROOT, \ROOT)
+                    ->withDirectory(DirectoryAlias::ROOT, ROOT)
                     ->withDirectory('@public', '@root/public')
                     ->withDirectory('@migrations', '@root/migrations');
             },
@@ -49,7 +37,7 @@ final class CommonConfigServiceProvider implements ServiceProvider
 
                 return $config
                     ->withName(
-                        $environment->get('APP_NAME')
+                        (string)$environment->get('APP_NAME')
                     );
             },
             ConsoleConfig::class => static function (ConsoleConfig $config, ContainerInterface $container) {
@@ -58,16 +46,11 @@ final class CommonConfigServiceProvider implements ServiceProvider
 
                 return $config
                     ->withAppName(
-                        $environment->get('CONSOLE_APP_NAME')
+                        (string)$environment->get('CONSOLE_APP_NAME')
                     );
             },
-            RouterConfig::class => static function (RouterConfig $config) {
-                return $config->withRoute(
-                    Route::get('/', HomeAction::class)
-                );
-            },
-            ClockConfig::class => static fn(ClockConfig $config) =>
-                $config->withTimezone('Europe/Minsk')
+            ClockConfig::class => static fn (ClockConfig $config) =>
+                $config->withTimezone('Europe/Minsk'),
         ];
     }
 }

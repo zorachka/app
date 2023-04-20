@@ -19,6 +19,9 @@ app-init: composer-install
 composer-install:
 	docker compose run --rm php-cli composer install
 
+composer-dump-autoload:
+	docker compose run --rm php-cli composer dump-autoload
+
 composer-update:
 	docker compose run --rm php-cli composer update
 

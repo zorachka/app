@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Project\Common\Infrastructure\Providers;
+namespace Project\Common\Infrastructure\Container;
 
+use Project\Http\Infrastructure\HttpServiceProvider as ProjectHttpServiceProvider;
 use Zorachka\Clock\ClockServiceProvider;
 use Zorachka\Console\ConsoleServiceProvider;
 use Zorachka\Container\ServiceProvider;
@@ -11,7 +12,6 @@ use Zorachka\Database\Cycle\DBAL\DBALServiceProvider;
 use Zorachka\Database\Cycle\Migrations\MigrationsServiceProvider;
 use Zorachka\Directories\DirectoriesServiceProvider;
 use Zorachka\Environment\EnvironmentServiceProvider;
-use Zorachka\ErrorHandler\ErrorHandlerServiceProvider;
 use Zorachka\EventDispatcher\EventDispatcherServiceProvider;
 use Zorachka\Http\Providers\HttpServiceProvider;
 use Zorachka\Logger\LoggerServiceProvider;
@@ -28,7 +28,6 @@ final class ProvidersAggregator
         return [
             // Framework
             EnvironmentServiceProvider::class,
-            ErrorHandlerServiceProvider::class,
             DirectoriesServiceProvider::class,
             LoggerServiceProvider::class,
             ClockServiceProvider::class,
@@ -45,6 +44,7 @@ final class ProvidersAggregator
 
             // Application config
             CommonConfigServiceProvider::class,
+            ProjectHttpServiceProvider::class,
         ];
     }
 }
