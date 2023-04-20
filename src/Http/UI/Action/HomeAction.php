@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Project\Post\UI\Http\Action;
+namespace Project\Http\UI\Action;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zorachka\Framework\Http\Response\ResponseFactory;
+use Zorachka\Http\Response\ResponseFactory;
 
 final class HomeAction implements RequestHandlerInterface
 {
@@ -18,11 +18,8 @@ final class HomeAction implements RequestHandlerInterface
         $this->responseFactory = $responseFactory;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return $this->responseFactory->html('Hello, world!');
+        return $this->responseFactory::html('<h1>Hello, world!</h1>');
     }
 }
