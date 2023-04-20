@@ -17,13 +17,14 @@
     "require": {
         "php": "^8.1",
         "ext-mbstring": "*",
+        "webmozart/assert": "^1.11",
         "zorachka/clock": "dev-main",
         "zorachka/console": "^1.1",
         "zorachka/container": "^3.1",
         "zorachka/database": "dev-main",
         "zorachka/directories": "dev-main",
         "zorachka/environment": "dev-main",
-        "zorachka/event-dispatcher": "^3.0",
+        "zorachka/event-dispatcher": "^3.1",
         "zorachka/http": "dev-main",
         "zorachka/logger": "dev-main",
         "zorachka/uuid": "dev-main"
