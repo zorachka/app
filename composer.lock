@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44f83e594dc681aaa659df24896db843",
+    "content-hash": "f309358720f15fe5b73aee667b5eb392",
     "packages": [
         {
             "name": "brick/math",
@@ -4398,16 +4398,16 @@
         },
         {
             "name": "zorachka/event-dispatcher",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zorachka/event-dispatcher.git",
-                "reference": "f0955aefbae2d92797f80816102ed5b433faac6e"
+                "reference": "edaef758842bbcf5dd4d9d4c3ca05e2ebad8d16d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zorachka/event-dispatcher/zipball/f0955aefbae2d92797f80816102ed5b433faac6e",
-                "reference": "f0955aefbae2d92797f80816102ed5b433faac6e",
+                "url": "https://api.github.com/repos/zorachka/event-dispatcher/zipball/edaef758842bbcf5dd4d9d4c3ca05e2ebad8d16d",
+                "reference": "edaef758842bbcf5dd4d9d4c3ca05e2ebad8d16d",
                 "shasum": ""
             },
             "require": {
@@ -4452,7 +4452,7 @@
             ],
             "support": {
                 "issues": "https://github.com/zorachka/event-dispatcher/issues",
-                "source": "https://github.com/zorachka/event-dispatcher/tree/v3.0.0"
+                "source": "https://github.com/zorachka/event-dispatcher/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -4464,7 +4464,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-04-06T13:27:54+00:00"
+            "time": "2023-04-20T12:09:48+00:00"
         },
         {
             "name": "zorachka/http",
