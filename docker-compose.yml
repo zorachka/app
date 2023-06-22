@@ -1,21 +1,67 @@
 version: "3.9"
 services:
-    nginx:
-        build:
-            context: docker/nginx
-        ports:
-            - "8081:80"
-        volumes:
-            - ./:/app
-        depends_on:
-            - php-fpm
-    php-fpm:
-        build:
-            context: docker/php-fpm
-        volumes:
-            - ./:/app
-    php-cli:
-        build:
-            context: docker/php-cli
-        volumes:
-            - ./:/app
+  nginx:
+    build:
+      context: docker/nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - ./:/app
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    build:
+      context: docker/php-fpm
+    environment:
+      APP_ENV: ${APP_ENV}
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USERNAME}
+      DB_PASSWORD_FILE: /run/secrets/db_password
+      DB_NAME: ${DB_NAME}
+    volumes:
+      - ./:/app
+    secrets:
+      - db_password
+    env_file:
+      - .env
+
+  php-cli:
+    build:
+      context: docker/php-cli
+    environment:
+      APP_ENV: ${APP_ENV}
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USERNAME}
+      DB_PASSWORD_FILE: /run/secrets/db_password
+      DB_NAME: ${DB_NAME}
+    volumes:
+      - ./:/app
+    secrets:
+      - db_password
+    env_file:
+      - .env
+
+  database:
+    container_name: ${DB_HOST}
+    hostname: ${DB_HOST}
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - database:/var/lib/postgresql/data
+    secrets:
+      - db_password
+    ports:
+      - "65432:5432"
+    env_file:
+      - .env
+
+volumes:
+  database:
+
+secrets:
+  db_password:
+    file: ./docker/secrets/db_password
